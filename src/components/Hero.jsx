@@ -1,7 +1,7 @@
 import { motion } from "framer-motion"
 
 import { styles } from "../styles"
-import { ComputersCanvas } from "./canvas"
+import { RobotCanvas } from "./canvas"
 import { style } from "framer-motion/client"
 
 const Hero = () => {
@@ -20,6 +20,7 @@ const Hero = () => {
           </p>
         </div>
       </div>
+        <RobotCanvas />
     </section>
   )
 }
