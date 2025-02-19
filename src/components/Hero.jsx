@@ -4,6 +4,7 @@ import { styles } from "../styles";
 import { RobotCanvas } from "./canvas";
 import { style } from "framer-motion/client";
 import { useEffect } from "react";
+import { SectionWrapper } from "../hoc";
 
 const Hero = () => {
   return (
@@ -48,4 +49,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default SectionWrapper(Hero, "hero");
