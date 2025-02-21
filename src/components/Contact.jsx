@@ -6,7 +6,10 @@ import { styles } from "../styles";
 import { EarthCanvas } from "./canvas";
 import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
-import { style } from "framer-motion/client";
+
+//template_lyo8553
+//service_in0pnou
+//mzINlQLmahsjjk_z1
 
 const Contact = () => {
   const formRef = useRef();
@@ -17,9 +20,45 @@ const Contact = () => {
   });
   const [loading, setLoading] = useState(false);
 
-  const handleChange = (e) => {};
+  const handleChange = (e) => {
+    const { name, value } = e.target;
 
-  const handleSubmit = async (e) => {};
+    setForm({ ...form, [name]: value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    emailjs
+      .send(
+        "service_in0pnou",
+        "template_lyo8553",
+        {
+          from_name: form.name,
+          to_name: "Naveesha",
+          from_email: form.email,
+          to_email: "lakshannaveesha10@gmail.com",
+          message: form.message,
+        },
+        "mzINlQLmahsjjk_z1"
+      )
+      .then(
+        () => {
+          setLoading(false);
+          alert("I will get back to you soon!");
+          setForm({
+            name: "",
+            email: "",
+            message: "",
+          });
+        },
+        (error) => {
+          setLoading(false);
+          console.log(error);
+          alert("Something went wrong! Please try again.");
+        }
+      );
+  };
 
   return (
     <div className="xl:mt-12 xl:flex-row flex-col-reverse flex gap-10 overflow-hidden">
