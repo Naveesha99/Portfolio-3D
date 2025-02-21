@@ -21,7 +21,7 @@ const Navbar = () => {
             window.scrollTo(0, 0);
           }}
         >
-          <img src={logo} className="w-9 h-9 object-contain" />
+          <img src={logo} className="w-12 h-12 object-contain rounded-full" />
           <p className="text-white text-[18px] font-bold cursor-pointer">
             Naveesha | Portfolio
           </p>
